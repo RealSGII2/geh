@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+      
       <title>SGII2's Images</title>
       
     <!-- Required meta tags -->
@@ -10,11 +11,121 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   </head>
-  <body>
+  <body style='background-color:#545454'>
+    
+    <div class='container text-center'>
+        <h1 style='color:white'>SGII2's Images</h1>
+        <h4 style='color:lightgrey'>What are you looking to do?</h4>
+        <p></p>
+        <button type="button" class="btn btn-primary">Look at images</button>
+        <button type="button" class="btn btn-secondary">Create an image for me!</button>
+    </div>
+    
+    <h1></h1>
     
     <div class='container'>
-        <h1>SGII2's Images</h1>
+        <div class="jumbotron bg-dark text-light">
+          <h1 class="display-4">Create an image for me!</h1>
+          <p class="lead">Here's how to do it.</p>
+          <hr class="my-4">
+          <p>This is done in a <i>Discord server.</i> However, you need to do this form to get the format.</p>
+          <button type="button" class="btn btn-primary btn-lg btn-block" >Start</button>
+        </div>
     </div>
+    
+    <div class = 'container'>
+        <div class="card text-center bg-dark text-light">
+          <div class="card-header">
+            <h3>Create Image</h3>
+          </div>
+          <div class="card-body">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+              <label class="btn btn-primary" id='id1a' active>
+                <input type="radio" name="options" id="option1" autocomplete="off" onclick='cidownload()'> Download an existing image
+              </label>
+              <label class="btn btn-primary" id='id2a'>
+                <input type="radio" name="options" id="option2" autocomplete="off" onclick='cicreate()'> Create a new one
+              </label>
+            </div>
+            
+            <!-- Form 2 -->
+            
+            <p></p>
+            
+            <container id='formgroup2' hidden>
+                <div class="input-group">
+                  <div class="input-group-prepend  text-light bg-dark">
+                    <div class="input-group-text  text-light bg-dark">
+                      <input aria-label="Radio button for following text input" class=' text-light bg-dark' type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                    </div>
+                  </div>
+                  <input placeholder='Recreation URL' type="text" class="form-control  text-light bg-dark" aria-label="Text input with radio button">
+                </div>
+                
+                <p></p>
+                
+                <div class="input-group">
+                  <div class="input-group-prepend  text-light bg-dark">
+                    <div class="input-group-text  text-light bg-dark">
+                      <input aria-label="Radio button for following text input" class=' text-light bg-dark' type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                    </div>
+                  </div>
+                  <textarea placeholder='Image Description (Please Be Clear)' class="form-control text-light bg-dark" aria-label="With textarea"></textarea>
+                </div>
+                
+                <p></p>
+                
+                <input placeholder='Output file name' type="text" class="form-control  text-light bg-dark" aria-label="Text input">
+                
+                <p></p>
+                
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <button class="btn btn-outline-light" type="button" id="button-addon1">Create</button>
+                  </div>
+                  <textarea class="form-control text-light bg-dark" placeholder="Please complete the form before using this." aria-label="Example text with button addon" aria-describedby="button-addon1" readonly></textarea>
+                </div>
+            </container>
+            
+            <p></p>
+            
+            <container id='formgroup1' hidden>
+                
+                <input placeholder='Image code' type="text" class="form-control  text-light bg-dark" aria-label="Text input">
+                
+                <p></p>
+                
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <button class="btn btn-outline-light" type="button" id="button-addon1">Create</button>
+                  </div>
+                  <textarea class="form-control text-light bg-dark" placeholder="Please complete the form before using this." aria-label="Example text with button addon" aria-describedby="button-addon1" readonly></textarea>
+                </div>
+            </container>
+            
+          </div>
+          <div class="card-footer text-muted">
+            Image Request Format Creator
+          </div>
+        </div>
+        <p></p>
+    </div>
+
+    <script>
+        function object(obj) {
+            return document.getElementById(obj);
+        };
+    
+        function cidownload() {
+            obj('formgroup1').hidden = false;
+            obj('formgroup2').hidden = true;
+        };
+        
+        function cicreate() {
+            obj('formgroup2').hidden = false;
+            obj('formgroup1').hidden = true;
+        };
+    </script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
