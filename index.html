@@ -38,15 +38,10 @@
           <div class="card-header">
             <h3>Create Image</h3>
           </div>
-          <div class="card-body">
-            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-              <label class="btn btn-primary" id='id1a' active>
-                <input type="radio" name="options" id="option1" autocomplete="off" href='javascript:cidownload()'> Download an existing image
-              </label>
-              <label class="btn btn-primary" id='id2a'>
-                <input type="radio" name="options" id="option2" autocomplete="off" href='javascript:cicreate()'> Create a new one
-              </label>
-            </div>
+          <div class="card-body text-left">
+            <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" onclick='ci(1)'>
+              Recreate an Image
+            </button>
             
             <!-- Form 2 -->
             
@@ -89,7 +84,7 @@
             
             <p></p>
             
-            <container id='formgroup1' hidden>
+            <container id='formgroup1'>
                 
                 <input placeholder='Image code' type="text" class="form-control  text-light bg-dark" aria-label="Text input">
                 
@@ -111,7 +106,11 @@
         <p></p>
     </div>
 
+    <!-- Optional JavaScript -->
+    
     <script>
+        let dc = 'd'
+    
         function object(obj) {
             return document.getElementById(obj);
         };
@@ -125,9 +124,13 @@
             object('formgroup2').hidden = false;
             object('formgroup1').hidden = true;
         };
+        
+        function ci() {
+            if (dc == 'd') cicreate() dc='c';
+            if (dc == 'c') cidownload() dc='d';
+        }
     </script>
-
-    <!-- Optional JavaScript -->
+    
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
