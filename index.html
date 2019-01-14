@@ -109,7 +109,7 @@
     <!-- Optional JavaScript -->
     
     <script>
-        let dc = 'd'
+        let dc = 1
     
         function object(obj) {
             return document.getElementById(obj);
@@ -126,8 +126,8 @@
         };
         
         function ci() {
-            if (dc == 'd') {cicreate(); dc='c'}
-            if (dc == 'c') {cidownload(); dc='d'}
+            if (dc === 1) {cicreate(); dc=2}
+            if (dc === 2) {cidownload(); dc=1}
         }
     </script>
     
