@@ -141,12 +141,17 @@
                       <label class="custom-control-label" for="customRadio3">None</label>
                     </div>
                   </div> <div class='text-center'>
-                    <button class="btn btn-primary" type="submit">
+                    <button class="btn btn-primary" type="submit" id='sub'>
                         Continue
-                    
                     </button>
+                    
+                    <button class="btn btn-secondary" id='copyEnd' disabled>
+                        Copy
+                    </button>
+                    
                     <p></p>
                     <div class="loader" id='loader' hidden></div>
+                    <input id='copy' class="form-control bg-dark text-light" type="text" placeholder="Please complete the form before using this." value='' readonly>
                   </div>
                 </form>
               </div>
@@ -159,6 +164,17 @@
         
     
     <script>
+    function show() {
+        document.getElementById('loader').hidden = false;
+        
+        setTimeout(function() {
+            document.getElementById('loader').hidden = true;
+            document.getElementById('sub').disabled = true;
+            document.getElementById('copyEnd').disabled = false;
+            document.getElementById('copy').value = 'this is not completed'
+        }, (Math.floor(Math.random() * 7)))
+    }
+    
     // Example starter JavaScript for disabling form submissions if there are invalid fields
     (function() {
       'use strict';
@@ -173,6 +189,9 @@
               event.stopPropagation();
             }
             form.classList.add('was-validated');
+              event.preventDefault();
+              event.stopPropagation();
+              show()
           }, false);
         });
       }, false);
