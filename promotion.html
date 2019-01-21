@@ -151,7 +151,7 @@
                     
                     <p></p>
                     <div class="loader" id='loader' hidden></div>
-                    <input id='copy' class="form-control bg-dark text-light" type="text" placeholder="Please complete the form before using this." value='' readonly>
+                    <textarea class="form-control bg-dark text-light" id="copy" rows="3" placeholder="Please complete the form before using this." readonly></textarea>
                   </div>
                 </form>
               </div>
@@ -171,7 +171,21 @@
             document.getElementById('loader').hidden = true;
             document.getElementById('sub').disabled = true;
             document.getElementById('copyEnd').disabled = false;
-            document.getElementById('copy').value = 'this is not completed'
+            document.getElementById('copy').innerHTML = 'loading'
+            
+            function get(f) {return document.getElementById(f)}
+            
+            let tex  = '**Name:** s/name \n**Icon:** s/icon \n**Channel:** s/channel \n**Members:** s/members \n**Warning:** s/warning \n**Obstacle:** s/obstacle \n**Invite:** s/invite';
+            
+            tex = tex.replace('s/name', get('validationCustom01').value)
+            .replace('s/icon', get('validationCustom03').value)
+            .replace('s/channel', get('validationCustom02').value)
+            .replace('s/obstacle', get('validationCustom04').value)
+            .replace('s/members', get('validationCustom06').value)
+            .replace('s/invite', get('validationCustom05').value);
+            
+            document.getElementById('copy').innerHTML = tex;
+            
         }, (Math.floor(Math.random() * 7)))
     }
     
