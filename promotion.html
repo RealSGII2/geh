@@ -2,13 +2,14 @@
 <html lang="en">
   <head>
       
-      <title>SGII2's Images</title>
+      <title>GEH Submit</title>
       
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+    <link href="node_modules/pnotify/dist/PNotifyBrightTheme.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     
     <style>
@@ -155,6 +156,28 @@
         
     
     <script>
+    import PNotify from 'pnotify/src/PNotify.html';
+import PNotifyButtons from 'pnotify/src/PNotifyButtons.html';
+
+PNotify.alert('Notice me, senpai!');
+    
+    function copy() {
+      /* Get the text field */
+      var copyText = document.getElementById("copy");
+    
+      /* Select the text field */
+      copyText.select();
+    
+      /* Copy the text inside the text field */
+      document.execCommand("copy");
+    
+      /* Alert the copied text */
+      PNotify.success({
+              text: "Copied the format.",
+              title: 'Copied!'
+            });
+    }
+    
     function show() {
         document.getElementById('loader').hidden = false;
         
@@ -177,6 +200,11 @@
             .replace('s/warning', get('validationCustom07').value);
             
             document.getElementById('copy').innerHTML = tex;
+            
+            PNotify.success({
+              text: "Created the format.",
+              title: 'Success!'
+            });
             
         }, ((Math.floor(Math.random() * 7)) * 1000))
     }
