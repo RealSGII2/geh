@@ -14,96 +14,24 @@
   <body style='background-color:#545454'>
     
     <div class='container text-center'>
-        <h1 style='color:white'>SGII2's Images</h1>
-        <h4 style='color:lightgrey'>What are you looking to do?</h4>
+        <h1 style='color:white'>GEH Submit</h1>
+        <h4 style='color:lightgrey'>Submit a server for Global Emote Hunters.</h4>
         <p></p>
-        <button type="button" class="btn btn-primary">Look at images</button>
-        <button type="button" class="btn btn-secondary">Create an image for me!</button>
     </div>
     
     <h1></h1>
     
     <div class='container'>
         <div class="jumbotron bg-dark text-light">
-          <h1 class="display-4">Create an image for me!</h1>
-          <p class="lead">Here's how to do it.</p>
+          <h1 class="display-4">I want to submit!</h1>
+          <p class="lead">This form will give you the correct format to submit something.</p>
           <hr class="my-4">
-          <p>This is done in a <i>Discord server.</i> However, you need to do this form to get the format.</p>
-          <button type="button" class="btn btn-primary btn-lg btn-block" >Start</button>
+          <p>Select the type of server you are submitting:</p>
+          <button type="button" class="btn btn-primary " href='/geh-submit/global/gw' >Globals (GameWisp)</button>
+          <button type="button" class="btn btn-primary " href='/geh-submit/global/mixer' >Globals (Mixer)</button>
+          <button type="button" class="btn btn-primary " href='/geh-submit/nitro' >Nitro Emotes</button>
+          <button type="button" class="btn btn-primary " href='/geh-submit/promotion' >Promotion</button>
         </div>
-    </div>
-    
-    <div class = 'container'>
-        <div class="card text-center bg-dark text-light">
-          <div class="card-header">
-            <h3>Create Image</h3>
-          </div>
-          <div class="card-body text-left">
-            <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" onclick='ci(1)'>
-              Recreate an Image
-            </button>
-            
-            <!-- Form 2 -->
-            
-            <p></p>
-            
-            <container id='formgroup2' hidden>
-                <div class="input-group">
-                  <div class="input-group-prepend  text-light bg-dark">
-                    <div class="input-group-text  text-light bg-dark">
-                      <input aria-label="Radio button for following text input" class=' text-light bg-dark' type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                    </div>
-                  </div>
-                  <input placeholder='Recreation URL' type="text" class="form-control  text-light bg-dark" aria-label="Text input with radio button">
-                </div>
-                
-                <p></p>
-                
-                <div class="input-group">
-                  <div class="input-group-prepend  text-light bg-dark">
-                    <div class="input-group-text  text-light bg-dark">
-                      <input aria-label="Radio button for following text input" class=' text-light bg-dark' type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                    </div>
-                  </div>
-                  <textarea placeholder='Image Description (Please Be Clear)' class="form-control text-light bg-dark" aria-label="With textarea"></textarea>
-                </div>
-                
-                <p></p>
-                
-                <input placeholder='Output file name' type="text" class="form-control  text-light bg-dark" aria-label="Text input">
-                
-                <p></p>
-                
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <button class="btn btn-outline-light" type="button" id="button-addon1">Create</button>
-                  </div>
-                  <textarea class="form-control text-light bg-dark" placeholder="Please complete the form before using this." aria-label="Example text with button addon" aria-describedby="button-addon1" readonly></textarea>
-                </div>
-            </container>
-            
-            <p></p>
-            
-            <container id='formgroup1'>
-                
-                <input placeholder='Image code' type="text" class="form-control  text-light bg-dark" aria-label="Text input">
-                
-                <p></p>
-                
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <button class="btn btn-outline-light" type="button" id="button-addon1">Create</button>
-                  </div>
-                  <textarea class="form-control text-light bg-dark" placeholder="Please complete the form before using this." aria-label="Example text with button addon" aria-describedby="button-addon1" readonly></textarea>
-                </div>
-            </container>
-            
-          </div>
-          <div class="card-footer text-muted">
-            Image Request Format Creator
-          </div>
-        </div>
-        <p></p>
     </div>
 
     <!-- Optional JavaScript -->
