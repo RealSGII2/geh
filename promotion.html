@@ -60,6 +60,7 @@
                 <h3>Promotion Server</h3>
               </div>
               <div class="card-body text-left text-light bg-dark">
+                <p>The server must have 500+ members to be submitted.<br><br><code>Name</code>: The name of the server.<br><code>Icon</code>: https://example.com/image/4GYTR<br><code>Channel</code>: The channel where users can promote their content.<br><code>Members</code>: The total amount of members the server has.<br><code>Warning</code>: If there's anything a user should look out for i.e no nsfw servers in the promotion channel.<br><code>Obstacle</code>: If there's a level you have to reach to get the role to post in the channel--captcha verification or a waiting period to get access to the server.<br><code>Invite</code>: An invite to the server that has unlimited uses--try to get an official invite instead of creating one yourself.</p>
                 <form class="needs-validation" novalidate>
                   <div class="form-row">
                     <div class="col-md-4 mb-3">
@@ -130,25 +131,26 @@
                   <div class='form-row'>
                     <div class="col-md-6 mb-3">
                       <label for="validationCustom03">Warning</label>
-                      <input type="text" class="form-control bg-dark text-light" id="validationCustom07" placeholder="Level 0 for emotes.">
+                      <input type="text" class="form-control bg-dark text-light" id="validationCustom07" placeholder="Anime server.">
                     </div>
                   </div> <div class='text-center'>
                     <button class="btn btn-primary" type="submit" id='sub'>
                         Continue
                     </button>
                     
-                    <button class="btn btn-secondary" id='copyEnd' disabled>
+                    <button class="btn btn-secondary" id='copyEnd' onclick='copy()' disabled>
                         Copy
                     </button>
                     
                     <p></p>
                     <div class="loader" id='loader' hidden></div>
-                    <textarea class="form-control bg-dark text-light" id="copy" rows="3" placeholder="Please complete the form before using this." readonly></textarea>
+                    <textarea class="form-control bg-dark text-light" id="copy" rows="7" placeholder="Complete the form and press 'CONTINUE' to use this." readonly></textarea>
+                    <label class='text-left' for='copy'>Press COPY to copy the above.</label>
                   </div>
                 </form>
               </div>
               <div class="card-footer text-muted">
-                Image Request Format Creator
+                GEH Submisson Format Creator
               </div>
             </div>
             <p></p>
