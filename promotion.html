@@ -187,11 +187,12 @@
             if (form.checkValidity() === false) {
               event.preventDefault();
               event.stopPropagation();
-            }
-            form.classList.add('was-validated');
+            } else {
               event.preventDefault();
               event.stopPropagation();
               show()
+            }
+            form.classList.add('was-validated');
           }, false);
         });
       }, false);
