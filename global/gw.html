@@ -42,7 +42,7 @@
   </head>
   
   
-  <body style='background-color:#545454'>
+  <body style='background-color:#545454' onload="onLoaded()">
     
     <div class='container text-center'>
         <h1 style='color:white'>GEH Submit</h1>
@@ -155,6 +155,13 @@
         
     
     <script>
+      
+      function onLoaded() {
+        let cookie = require('./cookie.js');
+        
+        if (cookie.get("loggedin") !== "" || cookie.get("loggedin") !== "false") {
+          window.location.href = "/geh-submit/login/panel";
+        }
     
     function copy() {
       /* Get the text field */
