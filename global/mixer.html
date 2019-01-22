@@ -177,7 +177,7 @@
             document.getElementById('copy').innerHTML = 'loading'
             get('copyText').innerHTML = 'Loading...'
             
-            let tex  = '**Name:** s/name \n**Icon:** s/icon \n**Emotes:** s/emotes \n**Automatic-Role:** s/role \n**Warning:** s/warning \n**Obstacle:** s/obstacle \n**Invite:** s/invite';
+            let tex  = '**Name:** s/name \n**Icon:** <s/icon> \n**Emotes:** s/emotes \n**Automatic-Role:** s/role \n**Warning:** s/warning \n**Obstacle:** s/obstacle \n**Invite:** s/invite';
             
             tex = tex.replace('s/name', get('validationCustom01').value)
             .replace('s/icon', get('validationCustom03').value)
