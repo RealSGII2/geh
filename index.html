@@ -11,7 +11,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   </head>
-  <body style='background-color:#545454'>
+  <body style='background-color:#545454' onload="onLoaded()">
     
     <div class='container text-center'>
         <h1 style='color:white'>GEH Submit</h1>
@@ -35,6 +35,16 @@
         </div>
     </div>
 
+    <script>
+      function onLoaded() {
+        let cookie = require('./cookie.js');
+        
+        if (cookie.get("loggedin") !== "" || cookie.get("loggedin") !== "false") {
+          window.location.href = "/geh-submit/login/panel";
+        }
+      }
+    </script>
+    
     <!-- Optional JavaScript -->
     
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
