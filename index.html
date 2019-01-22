@@ -27,37 +27,15 @@
           <p class="lead">This form will give you the correct format to submit something.</p>
           <hr class="my-4">
           <p>Select the type of server you are submitting:</p>
-          <button type="button" class="btn btn-primary " onclick="href='/geh-submit/global/gw'" >Globals (GameWisp)</button>
-          <button type="button" class="btn btn-primary " onclick="href='/geh-submit/global/mixer'" >Globals (Mixer)</button>
-          <button type="button" class="btn btn-primary " onclick="href='/geh-submit/nitro'" >Nitro Emotes</button>
-          <button type="button" class="btn btn-primary " onclick="href='/geh-submit/promotion'" >Promotion</button>
+          
+          <input type="button" class="btn btn-primary btn-block" value="Global Emotes (GameWisp)" onclick="window.location.href='/geh-submit/global/gw'" />
+          <input type="button" class="btn btn-primary btn-block" value="Global Emotes (Mixer)" onclick="window.location.href='/geh-submit/global/mixer'" />
+          <input type="button" class="btn btn-primary btn-block" value="Nitro Emotes" onclick="window.location.href='/geh-submit/nitro'" />
+          <input type="button" class="btn btn-primary btn-block" value="Promotion" onclick="window.location.href='/geh-submit/promotion'" />
         </div>
     </div>
 
     <!-- Optional JavaScript -->
-    
-    <script>
-        let dc = 1
-    
-        function object(obj) {
-            return document.getElementById(obj);
-        };
-    
-        function cidownload() {
-            object('formgroup1').hidden = false;
-            object('formgroup2').hidden = true;
-        };
-        
-        function cicreate() {
-            object('formgroup2').hidden = false;
-            object('formgroup1').hidden = true;
-        };
-        
-        function ci() {
-            if (dc === 1) {cicreate(); dc=2}
-            if (dc === 2) {cidownload(); dc=1}
-        }
-    </script>
     
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
