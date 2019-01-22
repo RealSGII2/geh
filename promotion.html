@@ -200,6 +200,7 @@
                   document.execCommand("copy");
                   
                   document.getElementById('sub').disabled = false;
+                  document.getElementById('sub').innerHTML = 'Rebuild'
                   get('copyText').innerHTML = 'Copied this to your clipboard.'
         }, ((Math.floor(Math.random() * 7)) * 1000))
     }
