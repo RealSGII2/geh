@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
       
-      <title>GEH Submit</title>
+      <title>GEH Submit | GW Globals</title>
       
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -137,7 +137,7 @@
                         Continue
                     </button>
                     
-                    <input type="button" class="btn btn-success" value="Submit" onclick="window.location.href='https://discordapp.com/channels/357367795341590528/536291268955996171'" />
+                    <input id="su" type="button" class="btn btn-success" value="Submit" onclick="window.location.href='https://discordapp.com/channels/357367795341590528/536291268955996171'" />
                     
                     <p></p>
                     <div class="loader" id='loader' hidden></div> <p></p>
@@ -201,6 +201,7 @@
                   document.execCommand("copy");
                   
                   document.getElementById('sub').disabled = false;
+                  document.getElementById('su').disabled = false;
                   document.getElementById('sub').innerHTML = 'Rebuild'
                   get('copyText').innerHTML = 'Copied this to your clipboard.'
         }, ((Math.floor(Math.random() * 7)) * 1000))
