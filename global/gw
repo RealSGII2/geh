@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      
+      <title>GEH Submit</title>
+      
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="node_modules/pnotify/dist/PNotifyBrightTheme.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    
+    <style>
+        .loader {
+          border: 6px solid #f3f3f3;
+          border-radius: 50%;
+          border-top: 6px solid blue;
+          border-bottom: 6px solid red;
+          border-left: 6px solid blue;
+          border-right: 6px solid blue;
+          width: 80px;
+          height: 80px;
+          -webkit-animation: spin 2s ease infinite;
+          animation: spin 2s ease infinite;
+          margin: auto;
+        }
+        
+        @-webkit-keyframes spin {
+          0% { -webkit-transform: rotate(0deg); border: 6px solid #f3f3f3;  border-top: 6px solid blue; border-bottom: 6px solid red; border-right: 6px solid light-grey; border-left: 6px solid light-grey;}
+          50% {border: 16px solid #f3f3f3;  border-top: 16px solid red; border-bottom: 16px solid blue; border-right: 16px solid green; border-left: 16px solid green;}
+          100% { -webkit-transform: rotate(360deg); border: 6px solid #f3f3f3;  border-top: 6px solid blue; border-bottom: 6px solid red; border-right: 6px solid grey; border-left: 6px solid grey;}
+        }
+        
+        @keyframes spin {
+          0% { -webkit-transform: rotate(0deg); border: 6px solid #f3f3f3;  border-top: 6px solid blue; border-bottom: 6px solid red; border-right: 6px solid light-grey; border-left: 6px solid light-grey;}
+          50% {border: 16px solid #f3f3f3;  border-top: 16px solid red; border-bottom: 16px solid blue; border-right: 16px solid pink; border-left: 16px solid pink;}
+          100% { -webkit-transform: rotate(360deg); border: 6px solid #f3f3f3;  border-top: 6px solid blue; border-bottom: 6px solid red; border-right: 6px solid light-grey; border-left: 6px solid light-grey;}
+        }
+    </style>
+  </head>
+  
+  
+  <body style='background-color:#545454'>
+    
+    <div class='container text-center'>
+        <h1 style='color:white'>GEH Submit</h1>
+        <h4 style='color:lightgrey'>Submit a server for Global Emote Hunters.</h4>
+        <p></p>
+    </div>
+    
+    <h1></h1>
+
+    <!-- Optional JavaScript -->
+
+     <div class = 'container'>
+            <div class="card text-center bg-dark text-light">
+              <div class="card-header">
+                <h3>Promotion Server</h3>
+              </div>
+              <div class="card-body text-left text-light bg-dark">
+                <p>The server must have 500+ members to be submitted.<br><br><code>Name</code>: The name of the server.<br><code>Icon</code>: https://example.com/image/4GYTR<br><code>Channel</code>: The channel where users can promote their content.<br><code>Members</code>: The total amount of members the server has.<br><code>Warning</code>: If there's anything a user should look out for i.e no nsfw servers in the promotion channel.<br><code>Obstacle</code>: If there's a level you have to reach to get the role to post in the channel--captcha verification or a waiting period to get access to the server.<br><code>Invite</code>: An invite to the server that has unlimited uses--try to get an official invite instead of creating one yourself.</p>
+                <form class="needs-validation" novalidate>
+                  <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                      <label for="validationCustom01">Server Name</label>
+                      <input type="text" class="form-control bg-dark text-light" id="validationCustom01" placeholder="Global Emote Hunters" value="" required>
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                      <div class="invalid-feedback">
+                        We require a server name.
+                      </div>
+                    </div>
+
+                    <div class="col mb-8 mb-3">
+                      <label for="validationCustomUsername">Automatic Role</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text bg-dark text-light" id="inputGroupPrepend">@</span>
+                        </div>
+                        <input type="text" class="form-control bg-dark text-light" id="validationCustom02" placeholder="Emotes" aria-describedby="inputGroupPrepend" required>
+                          <div class="valid-feedback">
+                            Looks good!
+                          </div>
+                          <div class="invalid-feedback">
+                            We require a role name.
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class='form-row'>
+                    <div class="col-md-12 mb-3">
+                      <label for="validationCustom03">Icon URL</label>
+                      <input type="text" class="form-control bg-dark text-light" id="validationCustom03" placeholder="https://cdn.discordapp.com/icons/357367795341590528/66e5f5cbcceeeac8de.jpg" required>
+                      <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            We require an icon URL.
+                        </div>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="validationCustom03">Obstacle</label>
+                      <input type="text" class="form-control bg-dark text-light" id="validationCustom04" placeholder="Level 0 for emotes.">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="validationCustom04">Invite</label>
+                      <input type="text" class="form-control bg-dark text-light" id="validationCustom05" placeholder="nJh10fG" required>
+                      <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            We require an invite URL.
+                        </div>
+                    </div>
+                  </div>
+                  <div class='form-row'>
+                    <div class="col-md-6 mb-3">
+                      <label for="validationCustom03">Warning</label>
+                      <input type="text" class="form-control bg-dark text-light" id="validationCustom06" placeholder="Anime server.">
+                    </div>
+                  </div>
+                  
+                  <div class='form-row'>
+                    <div class="col-md-12 mb-3">
+                      <label for="validationCustom03">Emotes</label>
+                      <textarea class="form-control bg-dark text-light" id="validationCustom07" rows="3" placeholder=":GWgehgay: :GWgehDrakeLul: :GWgehFeelsBatMan: :GWgehskrrt: :GWgehyeet:"></textarea>
+                    </div>
+                  </div>
+                  
+                  <div class='text-center'>
+                    <button class="btn btn-primary" type="submit" id='sub'>
+                        Continue
+                    </button>
+                    
+                    <p></p>
+                    <div class="loader" id='loader' hidden></div>
+                    <textarea class="form-control bg-dark text-light" id="copy" rows="7" placeholder="Complete the form and press 'CONTINUE' to use this." readonly></textarea>
+                    <label class='text-left' for='copy' id='copyText'></label>
+                  </div>
+                </form>
+              </div>
+              <div class="card-footer text-muted">
+                GEH Submisson Format Creator
+              </div>
+            </div>
+            <p></p>
+        </div>
+        
+    
+    <script>
+    
+    function copy() {
+      /* Get the text field */
+      var copyText = document.getElementById("copy");
+    
+      /* Select the text field */
+      copyText.select();
+    
+      /* Copy the text inside the text field */
+      document.execCommand("copy");
+    
+      /* Alert the copied text */
+    }
+    
+    function show() {
+        function get(f) {return document.getElementById(f)}
+        document.getElementById('loader').hidden = false;
+        get('copyText').innerHTML = 'Building...'
+        
+        setTimeout(function() {
+            document.getElementById('loader').hidden = true;
+            document.getElementById('copy').innerHTML = 'loading'
+            get('copyText').innerHTML = 'Loading...'
+            
+            let tex  = '**Name:** s/name \n**Icon:** s/icon \n**Emotes:** s/emotes \n**Automatic-Role:** s/role \n**Warning:** s/warning \n**Obstacle:** s/obstacle \n**Invite:** s/invite';
+            
+            tex = tex.replace('s/name', get('validationCustom01').value)
+            .replace('s/icon', get('validationCustom03').value)
+            .replace('s/role', get('validationCustom02').value)
+            .replace('s/obstacle', get('validationCustom04').value)
+            .replace('s/emotes', get('validationCustom07').value)
+            .replace('s/invite', get('validationCustom05').value)
+            .replace('s/warning', get('validationCustom06').value);
+            
+            document.getElementById('copy').innerHTML = tex;
+            
+                  /* Get the text field */
+                  var copyText = document.getElementById("copy");
+                
+                  /* Select the text field */
+                  copyText.select();
+                
+                  /* Copy the text inside the text field */
+                  document.execCommand("copy");
+                  
+                  document.getElementById('sub').disabled = false;
+                  document.getElementById('sub').innerHTML = 'Rebuild'
+                  get('copyText').innerHTML = 'Copied this to your clipboard.'
+        }, ((Math.floor(Math.random() * 7)) * 1000))
+    }
+    
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            } else {
+              event.preventDefault();
+              
+              event.stopPropagation();
+              show()
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+    </script>
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+</html>
