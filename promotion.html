@@ -138,14 +138,10 @@
                         Continue
                     </button>
                     
-                    <button class="btn btn-secondary" id='copyEnd' onclick='copy()' disabled>
-                        Copy
-                    </button>
-                    
                     <p></p>
                     <div class="loader" id='loader' hidden></div>
                     <textarea class="form-control bg-dark text-light" id="copy" rows="7" placeholder="Complete the form and press 'CONTINUE' to use this." readonly></textarea>
-                    <label class='text-left' for='copy'>Press COPY to copy the above.</label>
+                    <label class='text-left' for='copy' id='copyText'></label>
                   </div>
                 </form>
               </div>
@@ -173,15 +169,14 @@
     }
     
     function show() {
+        function get(f) {return document.getElementById(f)}
         document.getElementById('loader').hidden = false;
+        get('copyText').innerHTML = 'Building...'
         
         setTimeout(function() {
             document.getElementById('loader').hidden = true;
-            document.getElementById('sub').disabled = true;
-            document.getElementById('copyEnd').disabled = false;
             document.getElementById('copy').innerHTML = 'loading'
-            
-            function get(f) {return document.getElementById(f)}
+            get('copyText').innerHTML = 'Loading...'
             
             let tex  = '**Name:** s/name \n**Icon:** s/icon \n**Channel:** s/channel \n**Members:** s/members \n**Warning:** s/warning \n**Obstacle:** s/obstacle \n**Invite:** s/invite';
             
@@ -195,6 +190,17 @@
             
             document.getElementById('copy').innerHTML = tex;
             
+                  /* Get the text field */
+                  var copyText = document.getElementById("copy");
+                
+                  /* Select the text field */
+                  copyText.select();
+                
+                  /* Copy the text inside the text field */
+                  document.execCommand("copy");
+                  
+                  document.getElementById('sub').disabled = false;
+                  get('copyText').innerHTML = 'Copied this to your clipboard.'
         }, ((Math.floor(Math.random() * 7)) * 1000))
     }
     
@@ -212,6 +218,7 @@
               event.stopPropagation();
             } else {
               event.preventDefault();
+              
               event.stopPropagation();
               show()
             }
