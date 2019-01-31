@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      
+      <title>GEH Submit</title>
+      
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  </head>
+  <body style='background-color:#545454' onload="onLoaded()">
+    
+    <div class='container text-center'>
+        <h1 style='color:white'>GEH Submit</h1>
+        <h4 style='color:lightgrey'>Submit a server for Global Emote Hunters.</h4>
+        <p></p>
+    </div>
+    
+    <h1></h1>
+    
+    <div class="modal fade bg-dark text-light" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog bg-dark text-light" role="document">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header bg-dark text-light">
+            <h5 class="modal-title" id="exampleModalLabel">Nitro Emotes</h5>
+            <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body bg-dark text-light">
+            We need to know if you own this server or not.
+          </div>
+          <div class="modal-footer bg-dark text-light">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <input type="button" class="btn btn-primary" value="I own this server" onclick="window.location.href='/geh-submit/nitro/owned'" />
+            <input type="button" class="btn btn-primary" value="I don't own this server" onclick="window.location.href='/geh-submit/nitro/unowned'" />
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class='container'>
+        <div class="jumbotron bg-dark text-light">
+          <h1 class="display-4">I want to submit!</h1>
+          <p class="lead">This form will give you the correct format to submit something.</p>
+          <hr class="my-4">
+          <p>Select the type of server you are submitting:</p>
+          
+          <p></p><button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModal">
+              Nitro Emotes
+          </button><p></p>
+        </div>
+    </div>
+
+    <script>
+      function onLoaded() {
+        let cookie = require('./cookie.js');
+        
+        if (cookie.get("loggedin") !== "" || cookie.get("loggedin") !== "false") {
+          window.location.href = "/geh-submit/login/panel";
+        }
+      }
+    </script>
+    
+    <!-- Optional JavaScript -->
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+</html>
