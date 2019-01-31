@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      
+      <title>GEH Submit | Promotion</title>
+      
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="node_modules/pnotify/dist/PNotifyBrightTheme.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    
+    <style>
+        .loader {
+          border: 6px solid #f3f3f3;
+          border-radius: 50%;
+          border-top: 6px solid blue;
+          border-bottom: 6px solid red;
+          border-left: 6px solid blue;
+          border-right: 6px solid blue;
+          width: 80px;
+          height: 80px;
+          -webkit-animation: spin 2s ease infinite;
+          animation: spin 2s ease infinite;
+          margin: auto;
+        }
+        
+        @-webkit-keyframes spin {
+          0% { -webkit-transform: rotate(0deg); border: 6px solid #f3f3f3;  border-top: 6px solid blue; border-bottom: 6px solid red; border-right: 6px solid light-grey; border-left: 6px solid light-grey;}
+          50% {border: 16px solid #f3f3f3;  border-top: 16px solid red; border-bottom: 16px solid blue; border-right: 16px solid green; border-left: 16px solid green;}
+          100% { -webkit-transform: rotate(360deg); border: 6px solid #f3f3f3;  border-top: 6px solid blue; border-bottom: 6px solid red; border-right: 6px solid grey; border-left: 6px solid grey;}
+        }
+        
+        @keyframes spin {
+          0% { -webkit-transform: rotate(0deg); border: 6px solid #f3f3f3;  border-top: 6px solid blue; border-bottom: 6px solid red; border-right: 6px solid light-grey; border-left: 6px solid light-grey;}
+          50% {border: 16px solid #f3f3f3;  border-top: 16px solid red; border-bottom: 16px solid blue; border-right: 16px solid pink; border-left: 16px solid pink;}
+          100% { -webkit-transform: rotate(360deg); border: 6px solid #f3f3f3;  border-top: 6px solid blue; border-bottom: 6px solid red; border-right: 6px solid light-grey; border-left: 6px solid light-grey;}
+        }
+    </style>
+  </head>
+  
+  
+  <body style='background-color:#545454' onload="onLoaded()">
+    
+    <div class='container text-center'>
+        <h1 style='color:white'>GEH Submit</h1>
+        <h4 style='color:lightgrey'>Submit a server for Global Emote Hunters.</h4>
+        <p></p>
+    </div>
+    
+    <h1></h1>
+
+    <!-- Optional JavaScript -->
+
+     <div class = 'container'>
+            <div class="card text-center bg-dark text-light">
+              <div class="card-header">
+                <h3>Promotion Server</h3>
+              </div>
+              <div class="card-body text-left text-light bg-dark">
+                <p>1. The Nitro server must have unique emotes with an overarching theme i.e. blob emojis, turtle emojis . . .<br>2. The server cannot be a full-on community server with chats<br>3. There must be a channel where all the Nitro emotes are listed.<br>4. You must invite the Global Emote Hunters' bot.. <br>4a. You do not need to give the bot Administrator permission. <br>5. Must have permission from the server owner if the server isn't yours. <br>5a. If the server isn't yours, you do not need to meet requirement 4.<br>5b. If you can get the server owner to invite our bot, that would be helpful.</p>
+                <p><code>Name</code>: The name of the server.<br><code>Icon</code>: https://example.com/image/4GYTR<br><code>Bot Invited</code>: If our Global Emote Hunters bot is invited to your server.<br><code>Emotes</code>: You can manually list out the emotes or include a screenshot--do what you did in the icon field.<br><code>Invite</code>: An invite to the server that has unlimited uses--try to get an official invite instead of creating one yourself.</p>
+                <form class="needs-validation" novalidate>
+                  <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                      <label for="validationCustom01">Server Name</label>
+                      <input type="text" class="form-control bg-dark text-light" id="validationCustom01" placeholder="Global Emote Hunters" value="" required>
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                      <div class="invalid-feedback">
+                        We require a server name.
+                      </div>
+                    </div>
+
+                   <div class="col-md-4 mb-3">
+                      <label for="validationCustom03">Icon URL</label>
+                      <input type="text" class="form-control bg-dark text-light" id="validationCustom02" placeholder="https://cdn.discordapp.com/icons/357367795341590528/66e5f5cbcceeeac8de.jpg" required>
+                      <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            We require an icon URL.
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                      <label for="validationCustom04">Invite</label>
+                      <input type="text" class="form-control bg-dark text-light" id="validationCustom03" placeholder="nJh10fG" required>
+                      <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            We require an invite URL.
+                        </div>
+                    </div>
+
+
+                  </div>
+
+                  <div class='form-row'>
+                    <div class="col-md-12 mb-3">
+                      <label for="validationCustom03">Emotes</label>
+                      <textarea class="form-control bg-dark text-light" id="validationCustom06" rows="3" placeholder=":GWgehgay: :GWgehDrakeLul: :GWgehFeelsBatMan: :GWgehskrrt: :GWgehyeet:" required></textarea>
+                      <div class="valid-feedback">
+                            Looks good!
+                          </div>
+                          <div class="invalid-feedback">
+                            An emote server isn't an emote server without emotes!
+                          </div>
+                    </div>
+                  </div>
+                  
+                  <div class='form-row'>
+                     <div class="custom-control custom-checkbox mb-3">
+                        <input type="checkbox" class="custom-control-input" id="validationCustom04" required>
+                        <label class="custom-control-label" for="validationCustom04">I am sure that I have checked and know that this server isn't already on the list.</label>
+                        <div class="valid-feedback">
+                            Looks good!
+                          </div>
+                          <div class="invalid-feedback">
+                            You need to be sure!
+                          </div>
+                     </div>
+                  </div>
+
+                  <div class='form-row'>
+                     <div class="custom-control custom-checkbox mb-3">
+                        <input type="checkbox" class="custom-control-input" id="validationCustom05" required>
+                        <label class="custom-control-label" for="validationCustom05">The bot is invited.</label>
+                        <div class="valid-feedback">
+                            Looks good!
+                          </div>
+                          <div class="invalid-feedback">
+                            You need to have the bot invited! Not your server? Ask the owner to invite it or submit a server you don't own.
+                          </div>
+                     </div>
+                  </div>
+                  
+                  <div class='text-center'>
+                    <button class="btn btn-primary" type="submit" id='sub'>
+                        Continue
+                    </button>
+
+                    <input type="button" class="btn btn-secondary" value="Not my server" onclick="window.location.href='https://realsgii2.github.io/geh-submit/nitro/unowned'">
+
+                    <input type="button" class="btn btn-secondary" value="Invite bot" onclick="window.location.href='https://discordapp.com/api/oauth2/authorize?client_id=345762005845540864&permissions=8&scope=bot'">
+
+                  
+                    <input id="su" type="button" class="btn btn-success" value="Submit" onclick="window.location.href='https://discordapp.com/channels/357367795341590528/536291268955996171'" disabled>
+                    
+                    <p></p>
+                  <div class="loader" id='loader' hidden></div> <p></p>
+                    <textarea class="form-control bg-dark text-light" id="copy" rows="7" placeholder="Complete the form and press 'CONTINUE' to use this." readonly></textarea>
+                    <label class='text-left' for='copy' id='copyText'></label>
+                  </div>
+                </form>
+              </div>
+              <div class="card-footer text-muted">
+                GEH Submisson Format Creator
+              </div>
+            </div>
+            <p></p>
+        </div>
+        
+    
+    <script>
+      
+      
+      function onLoaded() {
+        let cookie = require('./cookie.js');
+        
+        if (cookie.get("loggedin") !== "" || cookie.get("loggedin") !== "false") {
+          window.location.href = "/geh-submit/login/panel";
+        }
+      }
+    
+    
+    function copy() {
+      /* Get the text field */
+      var copyText = document.getElementById("copy");
+    
+      /* Select the text field */
+      copyText.select();
+    
+      /* Copy the text inside the text field */
+      document.execCommand("copy");
+    
+      /* Alert the copied text */
+    }
+    
+    function show() {
+        function get(f) {return document.getElementById(f)}
+        document.getElementById('loader').hidden = false;
+        get('copyText').innerHTML = 'Building...'
+        
+        setTimeout(function() {
+            document.getElementById('loader').hidden = true;
+            document.getElementById('copy').innerHTML = 'loading'
+            get('copyText').innerHTML = 'Loading...'
+            
+            let tex  = '**Name:**  s/name \n**Icon:** <s/icon> \n**Bot Invited:** s/bot \n**Emotes:** s/emotes \n**Invite:** s/invite';
+            
+            tex = tex.replace('s/name', get('validationCustom01').value)
+            .replace('s/icon', get('validationCustom02').value)
+            .replace('s/invite', get('validationCustom03').value)
+            .replace('s/bot', get('validationCustom05').value.replace('on','Yes').replace('off','No'))
+            .replace('s/emotes', get('validationCustom06').value)
+            
+            document.getElementById('copy').innerHTML = tex;
+            
+                  /* Get the text field */
+                  var copyText = document.getElementById("copy");
+                
+                  /* Select the text field */
+                  copyText.select();
+                
+                  /* Copy the text inside the text field */
+                  document.execCommand("copy");
+                  
+                  document.getElementById('sub').disabled = false;
+                  document.getElementById('su').disabled = false;
+                  document.getElementById('sub').innerHTML = 'Rebuild'
+                  get('copyText').innerHTML = 'Copied this to your clipboard.'
+        }, ((Math.floor(Math.random() * 7)) * 1000))
+    }
+    
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            } else {
+              event.preventDefault();
+              
+              event.stopPropagation();
+              show()
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+    </script>
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+</html>
