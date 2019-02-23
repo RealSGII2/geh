@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+      <title>GEH Submit | Nitro (Unowned)</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="node_modules/pnotify/dist/PNotifyBrightTheme.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <style>
+        .loader {
+          border: 6px solid #f3f3f3;
+          border-radius: 50%;
+          border-top: 6px solid blue;
+          border-bottom: 6px solid red;
+          border-left: 6px solid blue;
+          border-right: 6px solid blue;
+          width: 80px;
+          height: 80px;
+          -webkit-animation: spin 2s ease infinite;
+          animation: spin 2s ease infinite;
+          margin: auto;
+        }
+
+        @-webkit-keyframes spin {
+          0% { -webkit-transform: rotate(0deg); border: 6px solid #f3f3f3;  border-top: 6px solid blue; border-bottom: 6px solid red; border-right: 6px solid light-grey; border-left: 6px solid light-grey;}
+          50% {border: 16px solid #f3f3f3;  border-top: 16px solid red; border-bottom: 16px solid blue; border-right: 16px solid green; border-left: 16px solid green;}
+          100% { -webkit-transform: rotate(360deg); border: 6px solid #f3f3f3;  border-top: 6px solid blue; border-bottom: 6px solid red; border-right: 6px solid grey; border-left: 6px solid grey;}
+        }
+
+        @keyframes spin {
+          0% { -webkit-transform: rotate(0deg); border: 6px solid #f3f3f3;  border-top: 6px solid blue; border-bottom: 6px solid red; border-right: 6px solid light-grey; border-left: 6px solid light-grey;}
+          50% {border: 16px solid #f3f3f3;  border-top: 16px solid red; border-bottom: 16px solid blue; border-right: 16px solid pink; border-left: 16px solid pink;}
+          100% { -webkit-transform: rotate(360deg); border: 6px solid #f3f3f3;  border-top: 6px solid blue; border-bottom: 6px solid red; border-right: 6px solid light-grey; border-left: 6px solid light-grey;}
+        }
+    </style>
+  </head>
+
+
+  <body style='background-color:#545454' onload="onLoaded()">
+
+    <div class='container text-center'>
+        <h1 style='color:white'>GEH Submit</h1>
+        <h4 style='color:lightgrey'>Submit a server for Global Emote Hunters.</h4>
+        <p></p>
+    </div>
+
+    <h1></h1>
+
+    <!-- Optional JavaScript -->
+
+     <div class = 'container'>
+            <div class="card text-center bg-dark text-light">
+              <div class="card-header">
+                <h3>Nitro Emotes Server</h3>
+              </div>
+              <div class="card-body text-left text-light bg-dark">
+                <p>Send a suggestion for GEH or OmniTM. Please make sure your suggestion is reasonable and wasn't posted before. </p>
+                <p><code>Name</code>: Name of your suggestion. <br><code>Description</code>: Content of your suggestion.</p>
+                <form class="needs-validation" novalidate>
+                  <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                      <label for="validationCustom01">Name</label>
+                      <input type="text" class="form-control bg-dark text-light" id="validationCustom01" placeholder="Remove all Anime" value="" required>
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                      <div class="invalid-feedback">
+                        We require a suggestion name.
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class='form-row'>
+                    <div class="col-md-12 mb-3">
+                      <label for="validationCustom03">Description</label>
+                      <textarea class="form-control bg-dark text-light" id="validationCustom02" rows="3" placeholder="way too much anime; it must be removed" required></textarea>
+                      <div class="valid-feedback">
+                            Looks good!
+                          </div>
+                          <div class="invalid-feedback">
+                            We require some detailed description.
+                          </div>
+                    </div>
+                  </div>
+
+                  <div class='form-row'>
+                     <div class="custom-control custom-checkbox mb-3">
+                        <input type="checkbox" class="custom-control-input" id="validationCustom03" required>
+                        <label class="custom-control-label" for="validationCustom03">I am sure that I have checked and know that this suggestion isn't already made.</label>
+                        <div class="valid-feedback">
+                            Looks good!
+                          </div>
+                          <div class="invalid-feedback">
+                            You need to be sure!
+                          </div>
+                     </div>
+                  </div>
+
+                  <div class='text-center'>
+                    <p> Submit as </p>
+                    <button class="btn btn-primary" type="submit" id='sub' onclick='rshow("2")'>
+                        Omni Suggestion
+                    </button>
+
+                    <button class="btn btn-primary" type="submit" id='sub2' onclick='rshow("1")'>
+                        Server Suggestion
+                    </button>
+
+                    <p></p>
+                  <div class="loader" id='loader' hidden></div> <p></p>
+                  </div>
+                </form>
+              </div>
+              <div class="card-footer text-muted">
+                GEH Suggestion Form
+              </div>
+            </div>
+            <p></p>
+        </div>
+
+
+    <script>
+
+
+      function onLoaded() {
+        let cookie = require('./cookie.js');
+
+        if (cookie.get("loggedin") !== "" || cookie.get("loggedin") !== "false") {
+          window.location.href = "/geh-submit/login/panel";
+        }
+      }
+
+
+    function copy() {
+      /* Get the text field */
+      var copyText = document.getElementById("copy");
+
+      /* Select the text field */
+      copyText.select();
+
+      /* Copy the text inside the text field */
+      document.execCommand("copy");
+
+      /* Alert the copied text */
+    }
+
+    function show() {
+        function get(f) {return document.getElementById(f)}
+        document.getElementById('loader').hidden = false;
+        get('copyText').innerHTML = 'Building...'
+
+        setTimeout(function() {
+            document.getElementById('loader').hidden = true;
+            document.getElementById('copy').innerHTML = 'loading'
+            get('copyText').innerHTML = 'Loading...'
+
+            let tex  = '**Name:**  s/name \n**Icon:** <s/icon> \n**Bot Invited:** s/bot \n**Emotes:** s/emotes \n**Invite:** s/invite';
+
+            tex = tex.replace('s/name', get('validationCustom01').value)
+            .replace('s/icon', get('validationCustom02').value)
+            .replace('s/invite', get('validationCustom03').value)
+            .replace('s/bot', 'Possibly; not my server.')
+            .replace('s/emotes', get('validationCustom06').value)
+
+            document.getElementById('copy').innerHTML = tex;
+
+                  /* Get the text field */
+                  var copyText = document.getElementById("copy");
+
+                  /* Select the text field */
+                  copyText.select();
+
+                  /* Copy the text inside the text field */
+                  document.execCommand("copy");
+
+                  document.getElementById('sub').disabled = false;
+                  document.getElementById('su').disabled = false;
+                  document.getElementById('sub').innerHTML = 'Rebuild'
+                  get('copyText').innerHTML = 'Copied this to your clipboard.'
+        }, ((Math.floor(Math.random() * 7)) * 1000))
+    }
+
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            } else {
+              event.preventDefault();
+
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+    </script>
+
+    <script type="text/javascript" src="discord.11.4.1.min.js"></script>
+    <script type="text/javascript">
+      function get(f) {return document.getElementById(f)}
+
+      function rshow(typeo) {
+        /* typeo
+        '1': Server
+        '2': Omni
+        */
+
+
+
+        document.getElementById('loader').hidden = false;
+        get('sub').disabled = true
+        get('sub2').disabled = true
+        get('copyText').innerHTML = 'Sending...'
+
+        let text = '**Name:** s/name \n **Description:** s/desc'
+        .replace('s/name', get('validationCustom01').value)
+        .replace('s/desc', get('validationCustom02').value);
+
+        const client = new Discord.Client();
+        if (typeo == '1') {const hook = new Discord.WebhookClient('548672403782238249', 'NSRmUE6lKBk4Z2M3JoJLEqSL7wy-nw8swWsrjH7bu8IFjsqztN4hp_n-4LNw-vYYAnQW');
+
+        hook.send(text)
+        document.getElementById('loader').hidden = false;
+        get('copyText').innerHTML = 'Sent!'} else {
+          const hook = new Discord.WebhookClient('548662409351528449', 'vOoYY6ElO6Gb9o85v3XgIwYVMpFMC7r9UozH5v_1oV5Xn9GJuX10k0S8eAjvMoglDUNZ');
+
+          hook.send(text)
+          document.getElementById('loader').hidden = false;
+          get('copyText').innerHTML = 'Sent!'
+        }
+        get('sub').disabled = false
+        get('sub2').disabled = false
+      }
+    </script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+</html>
