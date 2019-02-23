@@ -177,8 +177,8 @@
         .replace('s/name', get('validationCustom01').value)
         .replace('s/desc', get('validationCustom02').value)
         .replace('s/user', get('validationCustom05').value)
-        .replace('s/type', get('validationCustom04').value);
-
+        .replace('s/type', get('validationCustom04').value).replace('1','SERVER').replace('2','OMNI');
+        
         const client = new Discord.Client();
         const hook = new Discord.WebhookClient('548672403782238249', 'NSRmUE6lKBk4Z2M3JoJLEqSL7wy-nw8swWsrjH7bu8IFjsqztN4hp_n-4LNw-vYYAnQW');
 
