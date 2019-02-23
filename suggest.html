@@ -120,10 +120,10 @@
                   </div>
 
 
-                  
+
                   <p></p>
 
-                  
+
                   <div class='form-row'>
                     <label for="validationCustom01">Author (Discord Username)</label>
                     <input type="text" class="form-control bg-dark text-light" id="validationCustom05" placeholder="RealSGII2" value="" required>
@@ -133,7 +133,7 @@
                     <div class="invalid-feedback">
                       We require a valid Discord username.
                     </div>
-                  </div>
+                  </div> <p></p>
 
                   <div class='text-center'>
                     <button class="btn btn-primary" type="submit" id='sub'>
@@ -173,7 +173,8 @@
         get('sub').disabled = true
         get('copyText').innerHTML = 'Sending...'
 
-        let text = '**Name:** s/name \n **Description:** s/desc \n *From s/user*.'
+        setTimeout(function() {
+        let text = '**Name:** s/name \n**Description:** s/desc \n*From s/user*.'
         .replace('s/name', get('validationCustom01').value)
         .replace('s/desc', get('validationCustom02').value)
         .replace('s/user', get('validationCustom05').value);
@@ -194,6 +195,8 @@
         }
         get('sub').disabled = false
         get('copyText').innerHTML = 'Sent!'
+        document.getElementById('loader').hidden = true;
+        }, (Math.floor(Math.random() * 7) * 1000))
       }
 
       (function() {
