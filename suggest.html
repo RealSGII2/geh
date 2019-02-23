@@ -61,10 +61,10 @@
               </div>
               <div class="card-body text-left text-light bg-dark">
                 <p>Send a suggestion for GEH or OmniTM. Please make sure your suggestion is reasonable and wasn't posted before. </p>
-                <p><code>Name</code>: Name of your suggestion. <br><code>Description</code>: Content of your suggestion.</p>
+                <p><code>Name</code>: Name of your suggestion. <br><code>Description</code>: Content of your suggestion.<br><code>Type of Suggestion</code>: The type of suggestion you are sending. This changes the suggestion destination.</p>
                 <form class="needs-validation" novalidate>
                   <div class="form-row">
-                    <div class="col-md-4 mb-3">
+                    <div class="col-md-8 mb-3">
                       <label for="validationCustom01">Name</label>
                       <input type="text" class="form-control bg-dark text-light" id="validationCustom01" placeholder="Remove all Anime" value="" required>
                       <div class="valid-feedback">
@@ -73,8 +73,24 @@
                       <div class="invalid-feedback">
                         We require a suggestion name.
                       </div>
+                      
                     </div>
-
+                    <div class="col mb-4 mb-3">
+                      <label for="validationCustom04">Type of Suggestion</label>
+                      <div class="form-group">
+                      <select class="custom-select bg-dark text-light" id='validationCustom04' required>
+                        <option value="">Choose</option>
+                        <option value="1">Server</option>
+                        <option value="2">Omni</option>
+                      </select>
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                      <div class="invalid-feedback">
+                        We require a suggestion type.
+                      </div>
+                    </div>
+                    </div>
                   </div>
 
                   <div class='form-row'>
@@ -104,13 +120,8 @@
                   </div>
 
                   <div class='text-center'>
-                    <p> Submit as </p>
-                    <button class="btn btn-primary" type="submit" id='sub' onclick='rshow("2")'>
-                        Omni Suggestion
-                    </button>
-
-                    <button class="btn btn-primary" type="submit" id='sub2' onclick='rshow("1")'>
-                        Server Suggestion
+                    <button class="btn btn-primary" type="submit" id='sub'>
+                        Suggest
                     </button>
 
                     <p></p>
@@ -129,17 +140,19 @@
 
 
     <script type="text/javascript" src="discord.11.4.1.min.js"></script>
-    <script type="text/javascript" src="discord.11.4.1.min.js">
+    <script type="text/javascript">
+
+    
       function get(f) {return document.getElementById(f)}
 
-      function rshow(typeo) {
+      function show() {
         /* typeo
         '1': Server
         '2': Omni
         */
 
 
-
+        let typeo = ''
         document.getElementById('loader').hidden = false;
         get('sub').disabled = true
         get('sub2').disabled = true
@@ -148,6 +161,8 @@
         let text = '**Name:** s/name \n **Description:** s/desc'
         .replace('s/name', get('validationCustom01').value)
         .replace('s/desc', get('validationCustom02').value);
+
+        typeo = get('validationCustom04').value;
 
         const client = new Discord.Client();
         if (typeo == '1') {const hook = new Discord.WebhookClient('548672403782238249', 'NSRmUE6lKBk4Z2M3JoJLEqSL7wy-nw8swWsrjH7bu8IFjsqztN4hp_n-4LNw-vYYAnQW');
@@ -163,6 +178,7 @@
         }
         get('sub').disabled = false
         get('sub2').disabled = false
+        get('copyText').innerHTML = 'Sent!'
       }
 
       (function() {
@@ -178,8 +194,8 @@
                 event.stopPropagation();
               } else {
                 event.preventDefault();
-
                 event.stopPropagation();
+                show();
               }
               form.classList.add('was-validated');
             }, false);
