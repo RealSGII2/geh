@@ -168,7 +168,6 @@
         */
 
 
-        let typeo = ''
         document.getElementById('loader').hidden = false;
         get('sub').disabled = true
         get('copyText').innerHTML = 'Sending...'
@@ -177,10 +176,8 @@
         let text = '**NEW SUGGESTION FOR s/type:** \n**Name:** s/name \n**Description:** s/desc \n*From s/user*.'
         .replace('s/name', get('validationCustom01').value)
         .replace('s/desc', get('validationCustom02').value)
-        .replace('s/user', get('validationCustom05').value);
+        .replace('s/user', get('validationCustom05').value)
         .replace('s/type', get('validationCustom04').value);
-
-        typeo = get('validationCustom04').value;
 
         const client = new Discord.Client();
         const hook = new Discord.WebhookClient('548672403782238249', 'NSRmUE6lKBk4Z2M3JoJLEqSL7wy-nw8swWsrjH7bu8IFjsqztN4hp_n-4LNw-vYYAnQW');
