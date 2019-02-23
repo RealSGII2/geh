@@ -127,93 +127,9 @@
         </div>
 
 
-    <script>
-
-
-      function onLoaded() {
-        let cookie = require('./cookie.js');
-
-        if (cookie.get("loggedin") !== "" || cookie.get("loggedin") !== "false") {
-          window.location.href = "/geh-submit/login/panel";
-        }
-      }
-
-
-    function copy() {
-      /* Get the text field */
-      var copyText = document.getElementById("copy");
-
-      /* Select the text field */
-      copyText.select();
-
-      /* Copy the text inside the text field */
-      document.execCommand("copy");
-
-      /* Alert the copied text */
-    }
-
-    function show() {
-        function get(f) {return document.getElementById(f)}
-        document.getElementById('loader').hidden = false;
-        get('copyText').innerHTML = 'Building...'
-
-        setTimeout(function() {
-            document.getElementById('loader').hidden = true;
-            document.getElementById('copy').innerHTML = 'loading'
-            get('copyText').innerHTML = 'Loading...'
-
-            let tex  = '**Name:**  s/name \n**Icon:** <s/icon> \n**Bot Invited:** s/bot \n**Emotes:** s/emotes \n**Invite:** s/invite';
-
-            tex = tex.replace('s/name', get('validationCustom01').value)
-            .replace('s/icon', get('validationCustom02').value)
-            .replace('s/invite', get('validationCustom03').value)
-            .replace('s/bot', 'Possibly; not my server.')
-            .replace('s/emotes', get('validationCustom06').value)
-
-            document.getElementById('copy').innerHTML = tex;
-
-                  /* Get the text field */
-                  var copyText = document.getElementById("copy");
-
-                  /* Select the text field */
-                  copyText.select();
-
-                  /* Copy the text inside the text field */
-                  document.execCommand("copy");
-
-                  document.getElementById('sub').disabled = false;
-                  document.getElementById('su').disabled = false;
-                  document.getElementById('sub').innerHTML = 'Rebuild'
-                  get('copyText').innerHTML = 'Copied this to your clipboard.'
-        }, ((Math.floor(Math.random() * 7)) * 1000))
-    }
-
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
-    (function() {
-      'use strict';
-      window.addEventListener('load', function() {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.getElementsByClassName('needs-validation');
-        // Loop over them and prevent submission
-        var validation = Array.prototype.filter.call(forms, function(form) {
-          form.addEventListener('submit', function(event) {
-            if (form.checkValidity() === false) {
-              event.preventDefault();
-              event.stopPropagation();
-            } else {
-              event.preventDefault();
-
-              event.stopPropagation();
-            }
-            form.classList.add('was-validated');
-          }, false);
-        });
-      }, false);
-    })();
-    </script>
 
     <script type="text/javascript" src="discord.11.4.1.min.js"></script>
-    <script type="text/javascript">
+    <script type="text/javascript" src="discord.11.4.1.min.js">
       function get(f) {return document.getElementById(f)}
 
       function rshow(typeo) {
@@ -248,6 +164,28 @@
         get('sub').disabled = false
         get('sub2').disabled = false
       }
+
+      (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              } else {
+                event.preventDefault();
+  
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
     </script>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
