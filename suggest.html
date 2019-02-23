@@ -61,7 +61,7 @@
               </div>
               <div class="card-body text-left text-light bg-dark">
                 <p>Send a suggestion for GEH or OmniTM. Please make sure your suggestion is reasonable and wasn't posted before. </p>
-                <p><code>Name</code>: Name of your suggestion. <br><code>Description</code>: Content of your suggestion.<br><code>Type of Suggestion</code>: The type of suggestion you are sending. This changes the suggestion destination.</p>
+                <p><code>Name</code>: Name of your suggestion. <br><code>Description</code>: Content of your suggestion.<br><code>Type of Suggestion</code>: The type of suggestion you are sending. This changes the suggestion destination.<br><code>Author</code>: Your Discord username. If it's not a valid user in the server, your suggestion will be deleted.</p>
                 <form class="needs-validation" novalidate>
                   <div class="form-row">
                     <div class="col-md-8 mb-3">
@@ -119,6 +119,17 @@
                      </div>
                   </div>
 
+                  <div class='form-row'>
+                    <label for="validationCustom01">Author (Discord Username)</label>
+                    <input type="text" class="form-control bg-dark text-light" id="validationCustom01" placeholder="RealSGII2" value="" required>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                      We require a valid Discord username.
+                    </div>
+                  </div>
+
                   <div class='text-center'>
                     <button class="btn btn-primary" type="submit" id='sub'>
                         Suggest
@@ -157,9 +168,10 @@
         get('sub').disabled = true
         get('copyText').innerHTML = 'Sending...'
 
-        let text = '**Name:** s/name \n **Description:** s/desc'
+        let text = '**Name:** s/name \n **Description:** s/desc \n *From s/user*.'
         .replace('s/name', get('validationCustom01').value)
-        .replace('s/desc', get('validationCustom02').value);
+        .replace('s/desc', get('validationCustom02').value)
+        .replace('s/user', get('validationCustom05').value);
 
         typeo = get('validationCustom04').value;
 
