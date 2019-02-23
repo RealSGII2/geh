@@ -73,7 +73,7 @@
                       <div class="invalid-feedback">
                         We require a suggestion name.
                       </div>
-                      
+
                     </div>
                     <div class="col mb-4 mb-3">
                       <label for="validationCustom04">Type of Suggestion</label>
@@ -142,7 +142,7 @@
     <script type="text/javascript" src="discord.11.4.1.min.js"></script>
     <script type="text/javascript">
 
-    
+
       function get(f) {return document.getElementById(f)}
 
       function show() {
@@ -155,7 +155,6 @@
         let typeo = ''
         document.getElementById('loader').hidden = false;
         get('sub').disabled = true
-        get('sub2').disabled = true
         get('copyText').innerHTML = 'Sending...'
 
         let text = '**Name:** s/name \n **Description:** s/desc'
@@ -177,7 +176,6 @@
           get('copyText').innerHTML = 'Sent!'
         }
         get('sub').disabled = false
-        get('sub2').disabled = false
         get('copyText').innerHTML = 'Sent!'
       }
 
