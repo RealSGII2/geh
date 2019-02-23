@@ -61,7 +61,6 @@
               </div>
               <div class="card-body text-left text-light bg-dark">
                 <p>Send a suggestion for GEH or OmniTM. Please make sure your suggestion is reasonable and wasn't posted before. </p>
-                <p><code>Name</code>: Name of your suggestion. <br><code>Description</code>: Content of your suggestion.<br><code>Type of Suggestion</code>: The type of suggestion you are sending. This changes the suggestion destination.<br><code>Author</code>: Your Discord username. If it's not a valid user in the server, your suggestion will be deleted.</p>
                 <form class="needs-validation" novalidate>
                   <div class="form-row">
                     <div class="col-md-8 mb-3">
@@ -178,7 +177,7 @@
         .replace('s/desc', get('validationCustom02').value)
         .replace('s/user', get('validationCustom05').value)
         .replace('s/type', get('validationCustom04').value).replace('1','SERVER').replace('2','OMNI');
-        
+
         const client = new Discord.Client();
         const hook = new Discord.WebhookClient('548672403782238249', 'NSRmUE6lKBk4Z2M3JoJLEqSL7wy-nw8swWsrjH7bu8IFjsqztN4hp_n-4LNw-vYYAnQW');
 
